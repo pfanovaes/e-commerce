@@ -1,4 +1,8 @@
 # e-commerce
+
+## USUARIOS
+admin senha admin
+user senha user
 Projeto de estudo de sistemas, E-comerce
 
 Projeto do modulo: 

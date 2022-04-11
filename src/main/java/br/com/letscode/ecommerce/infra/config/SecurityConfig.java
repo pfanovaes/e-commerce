@@ -89,9 +89,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .roles("ADMIN");
 //   }
 
-    @Override
+   @Override
+   protected void configure(HttpSecurity http) throws Exception {
+       http.authorizeRequests().antMatchers("/login").permitAll()
+               .antMatchers("/produtos/").hasRole("USER")
+               .antMatchers("/produtos/").hasRole("ADMIN")
+
+               .antMatchers("/usuarios/usuario/").hasRole("USER")
+
+
+               .antMatchers("/produtos/codigo/**").hasRole("USER")
+               .antMatchers("/produtos/codigo/**").hasRole("ADMIN")
+               .antMatchers("/produtos/").hasRole("USER")
+               .antMatchers("/produtos/create").hasRole("ADMIN")
+               .antMatchers("/produtos/").hasRole("USER")
+
+               .antMatchers("/usuarios/**").hasRole("ADMIN")
+               .antMatchers("/fabricantes/create").hasRole("ADMIN");
+   }
+
     @Autowired
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configurerSecurityGlobal(AuthenticationManagerBuilder auth) throws Exception{
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .passwordEncoder(passEncoder)

@@ -88,4 +88,12 @@ public class UsuarioService implements UserDetailsService {
         );
 
     }
+
+    public UsuarioEntity buscarPorNome(String nome) {
+       return usuarioRepository.findByName(nome);
+    }
+
+    public void apagarPorId(Long id) {
+       usuarioRepository.delete(buscarPorId(id));
+    }
 }
