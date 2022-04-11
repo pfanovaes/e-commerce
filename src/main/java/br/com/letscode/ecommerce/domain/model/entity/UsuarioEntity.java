@@ -52,4 +52,5 @@ public class UsuarioEntity {
         this.dataAtualizacao = ZonedDateTime.now();
     }
 
+
 }

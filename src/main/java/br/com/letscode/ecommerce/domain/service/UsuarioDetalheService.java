@@ -22,6 +22,6 @@ public class UsuarioDetalheService implements UserDetailsService {
         UsuarioEntity usuarioEntity = repository.findByUsuario(usuario)
                 .orElseThrow(() -> new UsernameNotFoundException(""+ usuario));
 
-        return new User(usuario, usuarioEntity.getPassword(), new ArrayList<>());
+        return new User(usuario, usuarioEntity.getNome(),  new ArrayList<>());
     }
 }
