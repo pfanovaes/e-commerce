@@ -5,10 +5,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,8 +15,11 @@ public class Usuario implements UserDetails {
     @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "username")
     private String username;
+    @Column(name ="password")
     private String password;
+    @Column(name = "role")
     private String role;
 
     @Override
