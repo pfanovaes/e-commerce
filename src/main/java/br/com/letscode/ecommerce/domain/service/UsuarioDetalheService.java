@@ -19,7 +19,7 @@ public class UsuarioDetalheService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String usuario) throws UsernameNotFoundException {
-        UsuarioEntity usuarioEntity = repository.findByUsuario(usuario)
+        UsuarioEntity usuarioEntity = repository.findByNome(usuario)
                 .orElseThrow(() -> new UsernameNotFoundException(""+ usuario));
 
         return new User(usuario, usuarioEntity.getNome(),  new ArrayList<>());

@@ -6,6 +6,7 @@ import br.com.letscode.ecommerce.domain.model.exchange.AutenticacaoRequest;
 import br.com.letscode.ecommerce.domain.model.exchange.AutenticacaoResponse;
 import br.com.letscode.ecommerce.domain.service.UsuarioDetalheService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

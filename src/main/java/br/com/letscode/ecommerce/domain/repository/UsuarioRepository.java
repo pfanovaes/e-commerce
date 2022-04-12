@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity,Long>, JpaSpecificationExecutor<UsuarioEntity> {
-    @Query(value = "SELECT * FROM USUARIO_BD where nome = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM USUARIO_DB where nome = ?1", nativeQuery = true)
     UsuarioEntity findByName(String nome);
 
 
